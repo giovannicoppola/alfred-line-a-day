@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>giovanni.line-a-day</string>
+	<key>connections</key>
+	<dict>
+		<key>AF3F5D9A-7770-409D-A4EC-881D23C4A496</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7F95B0F3-71E4-4B64-834F-80A65F12A4A1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B0D2BE29-D535-4349-84AF-3A799DAADAD9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>giovanni</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>line-a-day</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python3 lineZap.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7F95B0F3-71E4-4B64-834F-80A65F12A4A1</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>line</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>#!/bin/zsh
+
+myText=$1
+myTextLength=${#myText}
+
+
+
+cat &lt;&lt; EOB
+{"items": [
+
+	{
+		"title": "length: $myTextLength",
+		"subtitle": "$1",
+		"arg": "$1"
+		}
+	
+
+	
+
+]}
+EOB</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>line-a-day</string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>AF3F5D9A-7770-409D-A4EC-881D23C4A496</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>- {date:yyyy-MM-dd} {date:EEE} {query}
+</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>B0D2BE29-D535-4349-84AF-3A799DAADAD9</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>7F95B0F3-71E4-4B64-834F-80A65F12A4A1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>910</integer>
+			<key>ypos</key>
+			<integer>220</integer>
+		</dict>
+		<key>AF3F5D9A-7770-409D-A4EC-881D23C4A496</key>
+		<dict>
+			<key>xpos</key>
+			<integer>735</integer>
+			<key>ypos</key>
+			<integer>385</integer>
+		</dict>
+		<key>B0D2BE29-D535-4349-84AF-3A799DAADAD9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>970</integer>
+			<key>ypos</key>
+			<integer>395</integer>
+		</dict>
+	</dict>
+	<key>variables</key>
+	<dict>
+		<key>MYFILE</key>
+		<string>/Users/giovanni.coppola/OneDrive - Regeneron Pharmaceuticals, Inc/GiovanniNotes/line-a-day.md</string>
+		<key>MYFILE_HOME</key>
+		<string>/Users/giovanni/Google Drive/GD_REGN/GD_SyncApps/giObsidian/line-a-day_home.md</string>
+	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>MYFILE_HOME</string>
+		<string>MYFILE</string>
+	</array>
+	<key>version</key>
+	<string></string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

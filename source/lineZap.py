@@ -4,10 +4,7 @@
 ### Wednesday, May 12, 2021, 2:28 PM
 
 
-import re
-import json
 import sys
-import time
 import os
 from datetime import datetime
 
@@ -21,7 +18,7 @@ if myUser == 'root':
 else:	
 	myFile = os.path.expanduser(os.getenv('MYFILE'))
 
-# dd/mm/YY
+# date formatting
 todayStandard = today.strftime("%Y-%m-%d %a %-I:%M%p")
 
 

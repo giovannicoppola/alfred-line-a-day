@@ -6,6 +6,19 @@
 	<string>giovanni.line-a-day</string>
 	<key>connections</key>
 	<dict>
+		<key>52DF8BB2-6E91-4C02-8F16-C0EDF2725E27</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AF3F5D9A-7770-409D-A4EC-881D23C4A496</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>AF3F5D9A-7770-409D-A4EC-881D23C4A496</key>
 		<array>
 			<dict>
@@ -48,7 +61,9 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python3 lineZap.py "$1"</string>
+				<string>export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
+export PYTHONPATH="$PWD/lib"
+python3 lineZap.py "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -66,6 +81,26 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>- {date:yyyy-MM-dd} {date:EEE} {query}
+</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>B0D2BE29-D535-4349-84AF-3A799DAADAD9</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -79,7 +114,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>line</string>
+				<string>{var:mainkeyword}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -117,7 +152,7 @@ EOB</string>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string></string>
+				<string>today's line</string>
 				<key>title</key>
 				<string>line-a-day</string>
 				<key>type</key>
@@ -135,64 +170,122 @@ EOB</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
 				<false/>
-				<key>clipboardtext</key>
-				<string>- {date:yyyy-MM-dd} {date:EEE} {query}
-</string>
-				<key>ignoredynamicplaceholders</key>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>37</integer>
+				<key>hotmod</key>
+				<integer>1835008</integer>
+				<key>hotstring</key>
+				<string>L</string>
+				<key>leftcursor</key>
 				<false/>
-				<key>transient</key>
-				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
+			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>B0D2BE29-D535-4349-84AF-3A799DAADAD9</string>
+			<string>52DF8BB2-6E91-4C02-8F16-C0EDF2725E27</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string># alfred-line-a-day
+one-line-a-day journal
+
+If you, like [John Quincy Adams](https://www.masshist.org/jqadiaries/php/how#:~:text=Line%2Da%2Dday%20entries%20are,%22%20(diary%20volume%2023)), like to summarize a day in one line (typically ~100 characters), this simple workflow will add a timestamp and save it in your `txt` or `md` file.
+
+![](line_screenshot.png)</string>
 	<key>uidata</key>
 	<dict>
+		<key>52DF8BB2-6E91-4C02-8F16-C0EDF2725E27</key>
+		<dict>
+			<key>xpos</key>
+			<real>540</real>
+			<key>ypos</key>
+			<real>385</real>
+		</dict>
 		<key>7F95B0F3-71E4-4B64-834F-80A65F12A4A1</key>
 		<dict>
 			<key>xpos</key>
-			<integer>910</integer>
+			<real>1000</real>
 			<key>ypos</key>
-			<integer>220</integer>
+			<real>220</real>
 		</dict>
 		<key>AF3F5D9A-7770-409D-A4EC-881D23C4A496</key>
 		<dict>
 			<key>xpos</key>
-			<integer>735</integer>
+			<real>740</real>
 			<key>ypos</key>
-			<integer>385</integer>
+			<real>385</real>
 		</dict>
 		<key>B0D2BE29-D535-4349-84AF-3A799DAADAD9</key>
 		<dict>
 			<key>xpos</key>
-			<integer>970</integer>
+			<real>1000</real>
 			<key>ypos</key>
-			<integer>395</integer>
+			<real>385</real>
 		</dict>
 	</dict>
-	<key>variables</key>
-	<dict>
-		<key>MYFILE</key>
-		<string>/Users/giovanni.coppola/OneDrive - Regeneron Pharmaceuticals, Inc/GiovanniNotes/line-a-day.md</string>
-		<key>MYFILE_HOME</key>
-		<string>/Users/giovanni/Google Drive/GD_REGN/GD_SyncApps/giObsidian/line-a-day_home.md</string>
-	</dict>
-	<key>variablesdontexport</key>
+	<key>userconfigurationconfig</key>
 	<array>
-		<string>MYFILE_HOME</string>
-		<string>MYFILE</string>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>filtermode</key>
+				<integer>2</integer>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>TXT or MD</string>
+			<key>label</key>
+			<string>line-a-day file</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>MYFILE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>line</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Main keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>mainkeyword</string>
+		</dict>
 	</array>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string></string>
+	<string>0.3</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>

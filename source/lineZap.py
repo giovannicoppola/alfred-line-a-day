@@ -13,10 +13,7 @@ myUser = os.getlogin()
 
 
 
-if myUser == 'root':
-	myFile = os.path.expanduser(os.getenv('MYFILE_HOME'))
-else:	
-	myFile = os.path.expanduser(os.getenv('MYFILE'))
+myFile = os.path.expanduser(os.getenv('MYFILE'))
 
 # date formatting
 todayStandard = today.strftime("%Y-%m-%d %a %-I:%M%p")

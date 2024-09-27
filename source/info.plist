@@ -4,6 +4,8 @@
 <dict>
 	<key>bundleid</key>
 	<string>giovanni.line-a-day</string>
+	<key>category</key>
+	<string>myWorkflows</string>
 	<key>connections</key>
 	<dict>
 		<key>52DF8BB2-6E91-4C02-8F16-C0EDF2725E27</key>

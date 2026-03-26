@@ -131,7 +131,8 @@ export PYTHONPATH="$PWD/lib"
 				<string>#!/bin/zsh
 
 myText=$1
-myTextLength=${#myText}
+myTextForCount=$(echo "$myText" | sed 's/^-[0-9][0-9]* //')
+myTextLength=${#myTextForCount}
 
 
 
@@ -140,7 +141,7 @@ cat &lt;&lt; EOB
 
 	{
 		"title": "length: $myTextLength",
-		"subtitle": "$1",
+		"subtitle": "$myTextForCount",
 		"arg": "$1"
 		}
 	
